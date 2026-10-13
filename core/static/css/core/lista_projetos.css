@@ -1,0 +1,133 @@
+/* static/css/core/lista_projetos.css */
+
+/* Reset básico e tipografia */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333333;
+    padding: 2rem 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Título principal */
+h1 {
+    font-size: 2rem;
+    color: #1a252f;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+/* Botão Cadastrar Novo Projeto */
+a[href*="criar_projeto"] {
+    display: inline-block;
+    background-color: #2563eb;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.65rem 1.25rem;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-bottom: 1.5rem;
+}
+
+a[href*="criar_projeto"]:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+/* Divisores */
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #e2e8f0;
+    margin: 1.5rem 0;
+}
+
+/* Cards de Projetos (<article>) */
+article {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    margin-bottom: 1rem;
+}
+
+article:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+article h2 {
+    font-size: 1.35rem;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+}
+
+article p {
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+}
+
+/* Data de início */
+article p:last-of-type {
+    font-size: 0.875rem;
+    color: #64748b;
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+}
+
+/* Botões Ações (Editar e Excluir) */
+article a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.4rem 0.85rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-right: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+/* Botão Editar */
+article a[href*="editar_projeto"] {
+    background-color: #fef3c7;
+    color: #92400e;
+    border: 1px solid #fde68a;
+}
+
+article a[href*="editar_projeto"]:hover {
+    background-color: #fde68a;
+    color: #78350f;
+}
+
+/* Botão Excluir */
+article a[href*="excluir_projeto"] {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+article a[href*="excluir_projeto"]:hover {
+    background-color: #fecaca;
+    color: #7f1d1d;
+}
+
+/* Mensagens de feedback (django.contrib.messages) */
+body > p {
+    padding: 0.85rem 1.25rem;
+    border-radius: 6px;
+    background-color: #dbeafe;
+    color: #1e40af;
+    border: 1px solid #bfdbfe;
+    margin-bottom: 1.25rem;
+}

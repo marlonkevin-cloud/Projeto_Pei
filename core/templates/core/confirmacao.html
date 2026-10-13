@@ -1,9 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excluir Projeto</title>
+    <link rel="stylesheet" href="{% static 'css/core/form_projeto.css' %}">
 </head>
 <body>
     <h1>Excluir projeto</h1>
@@ -18,7 +20,7 @@
         <button type="submit">Confirmar exclusão</button>
     </form>
 
-    <a href="{% url 'lista_projetos' %}">
+    <a href="{% url 'core:lista_projetos' %}">
         Cancelar
     </a>
 </body>

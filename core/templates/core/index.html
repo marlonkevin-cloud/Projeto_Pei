@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Início - GestorApp{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center my-5">
+    <div class="col-md-8 text-center">
+        <div class="bg-white p-5 rounded shadow-sm border">
+            <i class="bi bi-kanban text-primary display-1 mb-3"></i>
+            <h1 class="h2 fw-bold mb-3">Bem-vindo ao GestorApp</h1>
+            <p class="lead text-muted mb-4">
+                Utilize o menu de navegação no topo da página para visualizar e gerenciar seus projetos e tarefas.
+            </p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="{% url 'core:lista_projetos' %}" class="btn btn-primary btn-lg">
+                    <i class="bi bi-folder-check me-2"></i>Ir para Projetos
+                </a>
+                <a href="{% url 'core:lista_projetos' %}" class="btn btn-outline-primary btn-lg">
+                    <i class="bi bi-list-task me-2"></i>Ir para Tarefas
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
