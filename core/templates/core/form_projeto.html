@@ -1,9 +1,10 @@
-
+{% load static%}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/core/form_projeto.css' %}">
     <title>{{ titulo }}</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
         <button type="submit">Salvar</button>
     </form>
 
-    <a href="{% url 'lista_projetos' %}">
+    <a href="{% url 'core:lista_projetos' %}">
         Voltar para a lista
     </a>
 </body>

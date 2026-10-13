@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_head %}<link rel="stylesheet" href="{% static 'css/core/criar_projeto.css' %}">{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="form-container">
+        <h1>Cadastrar Projeto</h1>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">
+                    Salvar Projeto
+                </button>
+
+                <a href="{% url 'core:lista_projetos' %}" class="btn btn-secondary">
+                    Voltar
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

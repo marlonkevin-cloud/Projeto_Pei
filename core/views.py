@@ -5,6 +5,9 @@ from django.contrib import messages
 from .models import Projeto
 from .form import ProjetoForm
 
+def index(request):
+    return render(request, 'core/index.html')
+
 
 def lista_projetos(request):
     projetos = Projeto.objects.all()
@@ -15,27 +18,22 @@ def lista_projetos(request):
         {"projetos": projetos}
     )
 
-
 def criar_projeto(request):
     if request.method == "POST":
         form = ProjetoForm(request.POST)
 
         if form.is_valid():
             form.save()
-            messages.success(
-                request,
-                "Projeto cadastrado com sucesso!"
-            )
-            return redirect("lista_projetos")
+            messages.success(request, "Projeto cadastrado com sucesso!")
+            return redirect("core:lista_projetos")
     else:
         form = ProjetoForm()
 
     return render(
         request,
-        "core/form_projeto.html",
-        {"form": form, "titulo": "Cadastrar Projeto"}
+        "core/criar_projeto.html",
+        {"form": form}
     )
-
 
 def editar_projeto(request, pk):
     projeto = get_object_or_404(Projeto, pk=pk)
@@ -49,7 +47,7 @@ def editar_projeto(request, pk):
                 request,
                 "Projeto atualizado com sucesso!"
             )
-            return redirect("lista_projetos")
+            return redirect("core:lista_projetos")
     else:
         form = ProjetoForm(instance=projeto)
 
@@ -69,10 +67,10 @@ def excluir_projeto(request, pk):
             request,
             "Projeto excluído com sucesso!"
         )
-        return redirect("lista_projetos")
+        return redirect("core:lista_projetos")
 
     return render(
         request,
-        "core/confirmar_exclusao.html",
+        "core/confirmacao.html",
         {"projeto": projeto}
     )

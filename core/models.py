@@ -7,3 +7,11 @@ class Projeto(models.Model):
 
     def __str__(self):
         return self.nome
+
+class Tarefa(models.Model):
+    projeto = models.ForeignKey(Projeto, on_delete=models.CASCADE)
+    titulo = models.CharField(max_length=12)
+    descricao = models.TextField()
+
+    def __str__(self):
+        return self.titulo

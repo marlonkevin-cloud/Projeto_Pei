@@ -1,9 +1,10 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/core/lista_projetos.css' %}">
     <title>Lista de Projetos</title>
 </head>
 <body>
@@ -15,7 +16,7 @@
         {% endfor %}
     {% endif %}
 
-    <a href="{% url 'criar_projeto' %}">
+    <a href="{% url 'core:criar_projeto' %}">
         Cadastrar novo projeto
     </a>
 
@@ -31,11 +32,11 @@
                 Data de início: {{ projeto.data_inicio|date:"d/m/Y" }}
             </p>
 
-            <a href="{% url 'editar_projeto' projeto.pk %}">
+            <a href="{% url 'core:editar_projeto' projeto.pk %}">
                 Editar
             </a>
 
-            <a href="{% url 'excluir_projeto' projeto.pk %}">
+            <a href="{% url 'core:excluir_projeto' projeto.pk %}">
                 Excluir
             </a>
         </article>
